@@ -1,6 +1,5 @@
 
-
-export const animals = [
+ export const animals = [
     { name: 'alligator', likes: 0 },
     { name: 'alpaca', likes: 0 },
     { name: 'ant', likes: 0 },
@@ -165,3 +164,4 @@ export const animals = [
     { "name": "Cormorant", "likes": 0 },
     { "name": "Hawk", "likes": 0 }
   ];
+
