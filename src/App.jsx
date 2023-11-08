@@ -8,17 +8,22 @@ import { animals, birds } from './index'
 function App() {
   const [animalsList, setAnimals] = useState(animals);// (animals.concat(birds))
   const [birdsList, setBirds] = useState(birds);
+  
 
   function closeHandler(name) {
     console.log(name);
     const newArray = animalsList.filter((animal) => animal.name !== name);
+    const newArray1 = birdsList.filter((bird) => bird.name !== name);
     setAnimals(newArray);
+    setBirds(newArray1);
   }
 
-  function closeHandler(name) {
-    console.log(name);
-    const newArray = birdsList.filter((bird) => bird.name !== name);
-    setBirds(newArray);
+  function likesCounter(name){
+
+    const newArray3 = animalsList.filter((animal)=> 
+    if (animal.name === name) {
+      return ;
+    }
   }
 
   return (
@@ -29,7 +34,7 @@ function App() {
         <div className='cards'>
           {animalsList.map((animal) => (
             <Card key={animal.name} {...animal} onclick={() =>
-              closeHandler(animal.name)} />))} {/*onclick is an atribute */}
+              closeHandler(animal.name)} countLikes={()=>likesCounter(animal.name, 'add')}/>))} {/*onclick is an atribute */}
 
           {birdsList.map((bird) => (
             <Card key={bird.name} {...bird} onclick={() =>
@@ -43,3 +48,11 @@ function App() {
 }
 
 export default App
+/* if it was add add those, if it was .. remove it. App.js
+animalsliat.map((animal)=>(
+<Card.key={animal.name}
+{...animal}
+onRemove={()=> removeHandler(animal.name)}
+addLikes={()=> likesHandler(animal.name, 'add')}
+removeLikes={()=> likesHsndler(animal.name, 'remove')} />
+))} */
