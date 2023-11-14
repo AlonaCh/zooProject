@@ -7,8 +7,8 @@ import { animals, birds } from './index'
 
 function App() {
   const [animalsList, setAnimals] = useState(animals);// (animals.concat(birds))
-  const [birdsList, setBirds] = useState(birds);
-  
+  const [birdsList, setBirds] = useState(birds); // setBirds is a method, useState = hook, birdsList ia a state
+  const [search, setSearch] = useState('');
 
   function closeHandler(name) {
     console.log(name);
@@ -18,27 +18,49 @@ function App() {
     setBirds(newArray1);
   }
 
-  function likesCounter(name){
-
-    const newArray3 = animalsList.filter((animal)=> 
+  function likesCounter(name, action){
+  setAnimals(
+  animalsList.map((animal)=> {
     if (animal.name === name) {
-      return ;
+      if (action === 'add') {
+        return {...animal, likes: animal.likes + 1};
+      } if (action === 'remove') {
+        return {...animal, likes: animal.likes - 1};
     }
-  }
+  } else {
+    return animal; 
+  }})
+);
+}
+  function searchHandler(event){
+    setSearch(event.target.value);
+  };
 
   return (
     <>
       <Header name='ZOO' />
+      <input type="text" onChange={searchHandler}/>
       <main className='container'>
 
         <div className='cards'>
-          {animalsList.map((animal) => (
+          {animalsList
+          .filter(animal =>
+            animal.name.toLowerCase().includes(search.toLowerCase()))
+          .map((animal) => (
             <Card key={animal.name} {...animal} onclick={() =>
-              closeHandler(animal.name)} countLikes={()=>likesCounter(animal.name, 'add')}/>))} {/*onclick is an atribute */}
+              closeHandler(animal.name)} 
+              addLikes={()=>likesCounter(animal.name, 'add')}
+              removeLikes={()=>likesCounter(animal.name,'remove')}
+              />))}
+              {/*onclick is an atribute */}
 
-          {birdsList.map((bird) => (
+          {birdsList
+          .filter(bird => bird.name.toLowerCase().includes(search.toLowerCase()) )
+          .map((bird) => (
             <Card key={bird.name} {...bird} onclick={() =>
-              closeHandler(bird.name)} />))}
+              closeHandler(bird.name)} 
+              addLikes={()=>likesCounter(bird.name, 'add')}
+              removeLikes={()=>likesCounter(bird.name,'remove')}/>))}
 
         </div>
       </main>
@@ -49,10 +71,10 @@ function App() {
 
 export default App
 /* if it was add add those, if it was .. remove it. App.js
-animalsliat.map((animal)=>(
+animalslist.map((animal)=>(
 <Card.key={animal.name}
 {...animal}
 onRemove={()=> removeHandler(animal.name)}
 addLikes={()=> likesHandler(animal.name, 'add')}
-removeLikes={()=> likesHsndler(animal.name, 'remove')} />
+removeLikes={()=> likesHandler(animal.name, 'remove')} />
 ))} */
