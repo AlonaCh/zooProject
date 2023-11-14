@@ -59,6 +59,7 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
+  background-color: antiquewhite;
 }
 .close {
   top: 0;
@@ -75,5 +76,15 @@ button {
   justify-content: space-between;
 }
 .hearts {
+  cursor: pointer;
   display: flex;
+  background-color: pink;
+  border-radius: 20px;
+  padding: 5px;
+}
+.red-like {
+  color: red;
+}
+.black-like {
+  color: purple;
 }

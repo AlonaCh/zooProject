@@ -10,16 +10,16 @@ function App() {
   const [birdsList, setBirds] = useState(birds); // setBirds is a method, useState = hook, birdsList ia a state
   const [search, setSearch] = useState('');
 
-  function closeHandler(name) {
+  function closeHandler(name) { // we need to know wich name we click
     console.log(name);
-    const newArray = animalsList.filter((animal) => animal.name !== name);
+    const newArray = animalsList.filter((animal) => animal.name !== name);// newArray is everything but not that name
     const newArray1 = birdsList.filter((bird) => bird.name !== name);
     setAnimals(newArray);
     setBirds(newArray1);
   }
 
   function likesCounter(name, action){
-  setAnimals(
+  /*setAnimals(
   animalsList.map((animal)=> {
     if (animal.name === name) {
       if (action === 'add') {
@@ -30,8 +30,33 @@ function App() {
   } else {
     return animal; 
   }})
+);*/
+const newArray = animalsList.map((animal)=> {
+  if (animal.name === name) {
+    if (action === 'add') {
+      return {...animal, likes: animal.likes + 1};
+    } if (action === 'remove') {
+      return {...animal, likes: animal.likes - 1};
+  }
+} else {
+  return animal; 
+}})
+setBirds(
+  birdsList.map((bird)=> {
+    if (bird.name === name) {
+      if (action === 'add') {
+        return {...bird, likes: bird.likes + 1};
+      } if (action === 'remove') {
+        return {...bird, likes: bird.likes - 1};
+    }
+  } else {
+    return bird; 
+  }})
 );
+setAnimals(newArray);
 }
+
+
   function searchHandler(event){
     setSearch(event.target.value);
   };
@@ -44,12 +69,14 @@ function App() {
 
         <div className='cards'>
           {animalsList
-          .filter(animal =>
+          .filter((animal) =>
             animal.name.toLowerCase().includes(search.toLowerCase()))
           .map((animal) => (
-            <Card key={animal.name} {...animal} onclick={() =>
+            <Card key={animal.name} 
+            {...animal} // pass all the object
+             onclick={() =>
               closeHandler(animal.name)} 
-              addLikes={()=>likesCounter(animal.name, 'add')}
+              addLikes={()=>likesCounter(animal.name, 'add')} //addLikes is a trigger
               removeLikes={()=>likesCounter(animal.name,'remove')}
               />))}
               {/*onclick is an atribute */}
@@ -70,11 +97,3 @@ function App() {
 }
 
 export default App
-/* if it was add add those, if it was .. remove it. App.js
-animalslist.map((animal)=>(
-<Card.key={animal.name}
-{...animal}
-onRemove={()=> removeHandler(animal.name)}
-addLikes={()=> likesHandler(animal.name, 'add')}
-removeLikes={()=> likesHandler(animal.name, 'remove')} />
-))} */
