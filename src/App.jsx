@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import Card from './Card';
-import Header from './Header';
-import Footer from './Footer';
-import { animals, birds } from './index'
+import Card from './components/Card';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { animals, birds } from './index';
+import Home from './routes/Home';
+import Animals from './routes/Animals';
+import Birds from './routes/Birds';
+import About from './routes/About'
 
 
 function App() {
