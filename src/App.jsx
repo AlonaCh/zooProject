@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Card from './components/Card';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Root from './routes/Root';
 import { animals, birds } from './index';
 import Home from './routes/Home';
 import Animals from './routes/Animals';
