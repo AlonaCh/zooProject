@@ -1,11 +1,8 @@
 export default function Footer(props) {
     return (
         <div>
-         
-            <Footer copyright='Alona Chubenko' />
+            <p>Copyright Alona Chubenko</p>
         </div>
     );
 };
 
-/*{filteredAnimals.length !== 0 ? (
-    filteredAnimals.map((animal) => ( */
