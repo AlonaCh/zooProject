@@ -27,12 +27,12 @@ body {
   min-height: 100vh;
   text-align: center;
 }
-.container {
+/*.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+} */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -96,3 +96,43 @@ button {
   position: relative;
 }
  */
+.header ul {
+  background-color: #b8abec;
+  display: flex;
+}
+.header ul li{
+  list-style: none;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+.header a {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+}
+.containerLink {
+  height: 100vh;
+  padding: 2.4rem;
+  display: flex;
+  /*position: relative;*/
+}
+.animalLink,
+.birdLink {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+}
+
+.animalLink {
+  background-image: url('./animal.jpg');
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}
+.birdLink {
+  background-image: url('./bird.jpg');
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}

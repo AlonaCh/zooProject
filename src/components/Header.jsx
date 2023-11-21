@@ -18,7 +18,7 @@ export default function Header() {
                     <li><NavLink to="/about">About</NavLink></li>
                 </ul>
             </nav>
-            <h1>This is Zoo REACT App</h1>
+            <h1>Zoo REACT App</h1>
         </header>
     );
 };
