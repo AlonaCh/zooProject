@@ -7,13 +7,41 @@ import { animals, birds } from './index';
 import Home from './routes/Home';
 import Animals from './routes/Animals';
 import Birds from './routes/Birds';
-import About from './routes/About'
+import About from './routes/About';
+import { createBrowserRouter } from 'react-router-dom';
 
 
 function App() {
   const [animalsList, setAnimals] = useState(animals);// (animals.concat(birds))
   const [birdsList, setBirds] = useState(birds); // setBirds is a method, useState = hook, birdsList ia a state
   const [search, setSearch] = useState('');
+
+  //Routes
+  const router = createBrowserRouter([
+
+    {
+      path: '/', element: <Root />,
+      children: [
+        {path: '/', element: <Home />},
+        {path: '/animals', element: (<Animals
+        searchHandler={searchHandler}
+        closeHandler={closeHandler}
+        likesCounter={likesCounter}
+        search={search}
+        animalsList={animalsList}
+        />)},
+        {path: '/birds', element: <Birds 
+        searchHandler={searchHandler}
+        closeHandler={closeHandler}
+        likesCounter={likesCounter}
+        search={search}
+        birdsList={birdsList}
+        />},
+        {path: '/about', element: <About/>}
+      ]
+    },
+  ]
+  )
 
   function closeHandler(name) { // we need to know wich name we click
     console.log(name);
@@ -24,18 +52,6 @@ function App() {
   }
 
   function likesCounter(name, action){
-  /*setAnimals(
-  animalsList.map((animal)=> {
-    if (animal.name === name) {
-      if (action === 'add') {
-        return {...animal, likes: animal.likes + 1};
-      } if (action === 'remove') {
-        return {...animal, likes: animal.likes - 1};
-    }
-  } else {
-    return animal; 
-  }})
-);*/
 const newArray = animalsList.map((animal)=> {
   if (animal.name === name) {
     if (action === 'add') {
@@ -61,19 +77,18 @@ setBirds(
 setAnimals(newArray);
 }
 
-
   function searchHandler(event){
     setSearch(event.target.value);
   };
 
-  return (
+  {/*return (
     <>
-      <Header name='ZOO' />
+    
       <input type="text" onChange={searchHandler}/>
       <main className='container'>
 
         <div className='cards'>
-          {animalsList
+          {/*{animalsList
           .filter((animal) =>
             animal.name.toLowerCase().includes(search.toLowerCase()))
           .map((animal) => (
@@ -84,21 +99,32 @@ setAnimals(newArray);
               addLikes={()=>likesCounter(animal.name, 'add')} //addLikes is a trigger
               removeLikes={()=>likesCounter(animal.name,'remove')}
               />))}
-              {/*onclick is an atribute */}
+              {/*onclick is an atribute */
 
-          {birdsList
+         /* {birdsList
           .filter(bird => bird.name.toLowerCase().includes(search.toLowerCase()) )
           .map((bird) => (
             <Card key={bird.name} {...bird} onclick={() =>
               closeHandler(bird.name)} 
               addLikes={()=>likesCounter(bird.name, 'add')}
-              removeLikes={()=>likesCounter(bird.name,'remove')}/>))}
+            removeLikes={()=>likesCounter(bird.name,'remove')}/>))}.     
 
         </div>
       </main>
       <Footer copyright='Alona Chubenko' />
     </>
-  );
-}
+          ); */}
 
+return (
+  <>
+  <RouterProvider router={router}/>
+  </>
+)
+}
 export default App
+
+// organisms === 'animals'? setAnimals : setBirds;
+
+// function checkOrganisms(organisms){
+//return 'animals' ? animalsList : birdsList;
+//}
