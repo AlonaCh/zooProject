@@ -56,12 +56,16 @@ function App() {
     setAnimals(newArray);
   }
 
+  function cleanSearch(cleanSearch) {
+    setSearch('');
+  }
+
   function searchHandler(event) {
     setSearch(event.target.value);
   }
 
   const router = createBrowserRouter([{
-    path: '/', element: <Root />,
+    path: '/', element: <Root cleanSearch={cleanSearch} />,
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },

@@ -6,7 +6,7 @@ export default function ErrorPage() {
 
     return (
         <>
-            <div>
+            <div id="errorPage">
                 <p>Page nnot found</p>
                 <p>{error.statusText || error.message}</p>
             </div>

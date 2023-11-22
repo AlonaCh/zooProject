@@ -9,7 +9,7 @@ export default function Birds({ search,
     return (
         <>
             <input type="text" onChange={searchHandler} />
-            <h1>Birds will be here</h1>
+            <h1>Birds</h1>
             <div className="cards">
                 {birdsList
                     .filter(bird => bird.name.toLowerCase().includes(search.toLowerCase()))

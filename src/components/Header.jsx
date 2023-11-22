@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 
-export default function Header() {
+export default function Header({ cleanSearch }) {
 
     const { pathname } = useLocation();
     if (pathname === "/")
@@ -9,12 +9,11 @@ export default function Header() {
 
     return (
         <header className="header">
-
             <nav>
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
-                    <li><NavLink to="/animals">Animals</NavLink></li>
-                    <li><NavLink to="/birds">Birds</NavLink></li>
+                    <li><NavLink to="/animals" onClick={cleanSearch}>Animals</NavLink></li>
+                    <li><NavLink to="/birds" onClick={cleanSearch}>Birds</NavLink></li>
                     <li><NavLink to="/about">About</NavLink></li>
                 </ul>
             </nav>

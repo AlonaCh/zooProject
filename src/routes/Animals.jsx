@@ -6,6 +6,7 @@ export default function Animals({ search,
     animalsList,
     searchHandler,
 }) {
+    9
     return (
         <>
             <input type="text" onChange={searchHandler} />
