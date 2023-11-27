@@ -6,15 +6,19 @@ import Animals from "./routes/Animals";
 import Birds from "./routes/Birds";
 import About from "./routes/About";
 import ErrorPage from './routes/ErrorPage';
+import CategoryPage from "./routes/CategoryPage";
+import SinglePage from "./routes/SinglePage";
 
 import { RouterProvider } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 
 function App() {
-  const [animalsList, setAnimals] = useState(animals); // (animals.concat(birds))
-  const [birdsList, setBirds] = useState(birds); // setBirds is a method, useState = hook, birdsList ia a state
+  const [zooList, setZooList] = useState({ animalsArray: animals, birdsArray: birds }); //animalsArray and birdsArray are properties of the zooList state
   const [search, setSearch] = useState("");
 
+  function searchHandler(event) {
+    setSearch(event.target.value);
+  }
   function closeHandler(name) {
     // we need to know wich name we click
     console.log(name);
@@ -60,16 +64,14 @@ function App() {
     setSearch('');
   }
 
-  function searchHandler(event) {
-    setSearch(event.target.value);
-  }
+
 
   const router = createBrowserRouter([{
     path: '/', element: <Root cleanSearch={cleanSearch} />,
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },
-      {
+      /*{
         path: "/animals",
         element: (
           <Animals
@@ -92,7 +94,8 @@ function App() {
             birdsList={birdsList}
           />
         ),
-      },
+      }, */
+      { path: "/category/:name", element: <SinglePage {...zoo} /> },
       { path: "/about", element: <About /> },
     ],
   },
