@@ -19,13 +19,13 @@ function App() {
   function searchHandler(event) {
     setSearch(event.target.value);
   }
-  function closeHandler(name) {
+
+  function closeHandler(name, category) {
     // we need to know wich name we click
     console.log(name);
-    const newArray = animalsList.filter((animal) => animal.name !== name); // newArray is everything but not that name
-    const newArray1 = birdsList.filter((bird) => bird.name !== name);
-    setAnimals(newArray);
-    setBirds(newArray1);
+    const newArray = zooList[category].filter((element) => element.name !== name); // newArray is everything but not that name
+    setZooList({ ...zooList, [category]: newArray });
+
   }
 
   function likesCounter(name, action, category) {
@@ -38,33 +38,15 @@ function App() {
           return { ...zooList, likes: zooList.likes - 1 };
         }
       } else {
-        return animal;
+        return element;
       }
     });
-
-    setBirds(
-      birdsList.map((bird) => {
-        if (bird.name === name) {
-          if (action === "add") {
-            return { ...bird, likes: bird.likes + 1 };
-          }
-          if (action === "remove") {
-            return { ...bird, likes: bird.likes - 1 };
-          }
-        } else {
-          return bird;
-        }
-      })
-    );
-
-    setAnimals(newArray);
-  }
+    setZooList({ ...zooList, [category]: newArray });
+  };
 
   function cleanSearch(cleanSearch) {
     setSearch('');
   }
-
-
 
   const router = createBrowserRouter([{
     path: '/', element: <Root cleanSearch={cleanSearch} />,
@@ -96,7 +78,7 @@ function App() {
         ),
       }, */
       {
-        path: "category", element: <CategoryPage
+        path: ":category", element: <CategoryPage
           {...zooList}
           search={search}
           closeHandler={closeHandler}
