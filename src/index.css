@@ -96,7 +96,7 @@ button {
   position: relative;
 }
 .header ul {
-  background-color: #b8abec;
+  background-color: #EFCEE4;
   display: flex;
 }
 .header ul li{
@@ -109,6 +109,8 @@ button {
   text-decoration: none;
   display: flex;
   justify-content: flex-start;
+  color:#272044;
+  font-size: 18px;
 }
 .containerLink {
   height: 100vh;
@@ -140,7 +142,7 @@ button {
   text-decoration: none;
   align-items: center;
   display: flex;
-  color:white;
+  color: lightslategray;
   font-size: 35px;
 }
 .footer {

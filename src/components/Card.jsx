@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-function clickAddHeandler() {
+/*function clickAddHeandler() {
   const [likes, setLikes] = useState("");
-}
+}*/
 
 export default function Card({
   name,
@@ -20,16 +20,16 @@ export default function Card({
         <button className="close" onClick={onclick}><span></span>
           &times;
         </button>
-       
-        <p className="hearts" onClick={removeLikes}>
-          <span className="material-symbols-outlined">heart_minus</span>
-        </p>
+
+        <button onClick={removeLikes}>
+          <span className="hearts material-symbols-outlined">heart_minus</span>
+        </button>
         <p className="like">{likes}</p>
         <span className={likes < 0 ? "red-like material-symbols-outlined" : "black-like material-symbols-outlined"}>volunteer_activism</span>
         <button onClick={addLikes}>
           <span className="hearts material-symbols-outlined">heart_plus</span>
         </button>
-    
+
       </div>
     </div>
   );
