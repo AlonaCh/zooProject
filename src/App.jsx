@@ -2,8 +2,6 @@ import { useState } from "react";
 import Root from "./routes/Root";
 import { animals, birds } from "./index";
 import Home from "./routes/Home";
-import Animals from "./routes/Animals";
-import Birds from "./routes/Birds";
 import About from "./routes/About";
 import ErrorPage from './routes/ErrorPage';
 import CategoryPage from "./routes/CategoryPage";
