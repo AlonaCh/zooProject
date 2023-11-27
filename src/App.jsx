@@ -28,14 +28,14 @@ function App() {
     setBirds(newArray1);
   }
 
-  function likesCounter(name, action) {
-    const newArray = animalsList.map((animal) => {
-      if (animal.name === name) {
+  function likesCounter(name, action, category) {
+    const newArray = zooList[category].map((element) => {
+      if (element.name === name) {
         if (action === "add") {
-          return { ...animal, likes: animal.likes + 1 };
+          return { ...zooList, likes: zooList.likes + 1 };
         }
         if (action === "remove") {
-          return { ...animal, likes: animal.likes - 1 };
+          return { ...zooList, likes: zooList.likes - 1 };
         }
       } else {
         return animal;
@@ -95,7 +95,16 @@ function App() {
           />
         ),
       }, */
-      { path: "/category/:name", element: <SinglePage {...zoo} /> },
+      {
+        path: "category", element: <CategoryPage
+          {...zooList}
+          search={search}
+          closeHandler={closeHandler}
+          likesCounter={likesCounter}
+          searchHandler={searchHandler}
+        />
+      },
+      { path: "/category/:name", element: <SinglePage {...zooList} /> },//:name=param
       { path: "/about", element: <About /> },
     ],
   },
