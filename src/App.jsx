@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Root from "./routes/Root";
-import { animals, birds } from "./index";
+import { animals, birds } from "./index.js";
 import Home from "./routes/Home";
 import About from "./routes/About";
 import ErrorPage from './routes/ErrorPage';
@@ -42,47 +42,24 @@ function App() {
     setZooList({ ...zooList, [category]: newArray });
   };
 
-  function cleanSearch(cleanSearch) {
+  function cleanSearch() { //(cleanSearch)
     setSearch('');
   }
 
   const router = createBrowserRouter([{
-    path: '/', element: <Root cleanSearch={cleanSearch} />,
+    path: '/', element: (<Root cleanSearch={cleanSearch} />),
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },
-      /*{
-        path: "/animals",
-        element: (
-          <Animals
-            searchHandler={searchHandler}
-            closeHandler={closeHandler}
-            likesCounter={likesCounter}
-            search={search}
-            animalsList={animalsList}
-          />
-        ),
-      },
+
       {
-        path: "/birds",
-        element: (
-          <Birds
-            searchHandler={searchHandler}
-            closeHandler={closeHandler}
-            likesCounter={likesCounter}
-            search={search}
-            birdsList={birdsList}
-          />
-        ),
-      }, */
-      {
-        path: ":category", element: <CategoryPage
+        path: ":category", element: (<CategoryPage
           {...zooList}
           search={search}
           closeHandler={closeHandler}
           likesCounter={likesCounter}
           searchHandler={searchHandler}
-        />
+        />)
       },
       { path: "/category/:name", element: <SinglePage {...zooList} /> },//:name=param
       { path: "/about", element: <About /> },
@@ -98,9 +75,3 @@ function App() {
 }
 
 export default App;
-
-// organisms === 'animals'? setAnimals : setBirds;
-
-// function checkOrganisms(organisms){
-//return 'animals' ? animalsList : birdsList;
-//}
