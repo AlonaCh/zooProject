@@ -1,3 +1,5 @@
+import { RouterProvider } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import Root from "./routes/Root";
 import { animals, birds } from "./index.js";
@@ -7,8 +9,6 @@ import ErrorPage from './routes/ErrorPage';
 import CategoryPage from "./routes/CategoryPage";
 import SinglePage from "./routes/SinglePage";
 
-import { RouterProvider } from "react-router-dom";
-import { createBrowserRouter } from "react-router-dom";
 
 function App() {
   const [zooList, setZooList] = useState({ animalsArray: animals, birdsArray: birds }); //animalsArray and birdsArray are properties of the zooList state
@@ -42,12 +42,12 @@ function App() {
     setZooList({ ...zooList, [category]: newArray });
   };
 
-  function cleanSearch() { //(cleanSearch)
+  function cleanSearch() {
     setSearch('');
   }
 
   const router = createBrowserRouter([{
-    path: '/', element: (<Root cleanSearch={cleanSearch} />),
+    path: '/', element: <Root cleanSearch={cleanSearch} />,
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <Home /> },

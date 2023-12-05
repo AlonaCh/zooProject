@@ -1,11 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import Search from '../components/Search';
 
 export default function CategoryPage(props) {
-    let params = useParams();
-    console.log(params);
-    let category = params.category;
+    const params = useParams();
+    let category = params.category; // props[params.category];
+    console.log(props[category]);
 
     return (
         <>
@@ -26,3 +26,5 @@ export default function CategoryPage(props) {
         </>
     )
 };
+
+//{ Cities.map(city) => (<CityItem city={city} key={city.id} />) }
