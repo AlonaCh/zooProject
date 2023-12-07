@@ -11,7 +11,7 @@ import SinglePage from "./routes/SinglePage";
 
 
 function App() {
-  const [zooList, setZooList] = useState({ animalsArray: animals, birdsArray: birds }); //animalsArray and birdsArray are properties of the zooList state
+  const [zooList, setZooList] = useState({ animals: animals, birds: birds }); //animalsArray and birdsArray are properties of the zooList state
   const [search, setSearch] = useState("");
 
   function searchHandler(event) {
@@ -30,10 +30,10 @@ function App() {
     const newArray = zooList[category].map((element) => {
       if (element.name === name) {
         if (action === "add") {
-          return { ...zooList, likes: zooList.likes + 1 };
+          return { ...element, likes: element.likes + 1 };
         }
         if (action === "remove") {
-          return { ...zooList, likes: zooList.likes - 1 };
+          return { ...element, likes: element.likes - 1 };
         }
       } else {
         return element;

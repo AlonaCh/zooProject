@@ -3,12 +3,13 @@ import { useLocation } from 'react-router-dom';
 
 export default function Header({ cleanSearch }) {
 
-    const { pathname } = useLocation();
+    /*const { pathname } = useLocation();
     if (pathname === "/")
-        return null;
+        return null;*/
 
     return (
-        <header className="header">
+        <header>
+            <h1><NavLink className="header" to="/">Zoo REACT App</NavLink></h1>
             <nav>
                 <ul>
                     <li><NavLink to="/">Home</NavLink></li>
@@ -17,7 +18,7 @@ export default function Header({ cleanSearch }) {
                     <li><NavLink to="/about">About</NavLink></li>
                 </ul>
             </nav>
-            <h1>Zoo REACT App</h1>
+
         </header>
     );
 };

@@ -1,3 +1,3 @@
 export default function Search(props) {
-    <input className="inputSeacrh" placeholder="Search" type="text" onChange={props.searchHandler} />
+    <input className="inputSeacrh" placeholder="Search..." type="text" onChange={props.searchHandler} autoFocus="on" />
 }

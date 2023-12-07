@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 /*function clickAddHeandler() {
   const [likes, setLikes] = useState("");
@@ -31,6 +31,7 @@ export default function Card({
         </button>
 
       </div>
+      <Link className="more" to={`${name}/`}>See more</Link>
     </div>
   );
 }

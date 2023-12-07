@@ -6,10 +6,10 @@ export default function SinglePage(props) {
     const navigate = useNavigate();
     const category = params.category;
 
-    const elementArray = props[params.category]
+    let elementArray = props[params.category]
     console.log(elementArray);
 
-    const data = elementArray.find((element) => element.name === params.name);
+    let data = elementArray.find((element) => element.name == params.name);
     console.log(data);
 
     return (
