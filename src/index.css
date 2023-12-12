@@ -1,28 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Changa&family=Dosis:wght@300&family=Frank+Ruhl+Libre:wght@300&family=Lato:ital,wght@0,300;1,400&family=PT+Mono&family=Playfair+Display&family=Poppins:wght@200&family=Roboto+Condensed:wght@300&family=Tourney:ital,wght@0,500;1,400&display=swap');
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  background-color: white;
+    --color-primary: #272044;
+    --color-back: #F4F1FE;
+    --color-back-card:antiquewhite;
+    --header-color: pink;
+    --close-color: grey;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
 }
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  color: #272044;
+  color: var(--color-primary);
+  background-color: var(--color-back);
   min-width: 320px;
   min-height: 100vh;
   text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 .cards {
   display: grid;
@@ -31,7 +35,7 @@ body {
   margin: 15px;
 }
 .card {
-  background-color: antiquewhite;
+  background-color: var(--color-back-card);
   position: relative;
   border-radius: 5px;
 }
@@ -49,7 +53,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 55vh;
-  background: lightgrey;
+  background: var(--color-back);
   padding: 20px;
   margin-bottom: 200px;
 }
@@ -64,9 +68,9 @@ body {
   transform: scale(1.1);
   transition: 0.6s ease-in all;
 }
-.singleText {
-  background: var(--header-color);
-}
+/*.singleText {
+
+}*/
 .singleText h2 {
   font-size: 30px;
 }
@@ -95,7 +99,7 @@ button {
   padding: 10px;
   border-bottom-left-radius: 10px;
   position: absolute;
-  background: grey;
+  background: var(--close-color);
   color: white;
   position: absolute;
 }
@@ -106,7 +110,7 @@ button {
 .hearts {
   cursor: pointer;
   display: flex;
-  background-color: pink;
+  background-color: var(--header-color);
   border-radius: 20px;
   padding: 5px;
 }
@@ -124,15 +128,16 @@ button {
   position: relative;
 }
 .navLinkGroup {
+  top: 0;
   display: flex;
   justify-content: space-between;
   margin: 5px;
   font-size: 18px;
-  background-color: pink;
+  background-color: var(--color-back-card);
 }
 .navLinkGroup p a{
   text-decoration: none;
-  color:#272044;
+  color: var(--color-primary);
   font-size: 1.1rem;
   padding: 5px;
 }
@@ -147,7 +152,7 @@ ul li a {
   text-decoration: none;
   padding: 8px;
   display: inline-block;
-  color:#272044;
+  color: var(--color-primary);
 }
 a:hover  {
   text-decoration: none;
@@ -191,13 +196,32 @@ a:hover  {
 }
 .more {
   text-decoration: none;
-  color: #272044;
+  color: var(--color-primary);
 }
 .return {
   font-weight: 600;
   font-size: 0.8rem;
-  background: pink;
-  color: #272044;
+  background: var(--header-color);
+  color: var(--color-primary);
   padding: 1rem;
   margin: 2rem;
+}
+.input {
+  justify-self: center;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 0.7rem;
+  width: 40rem;
+  transition: all 0.3s;
+  color: var(--color-primary);
+  background-color: white;
+}
+.input::placeholder {
+  color: var(--color-primary);
+}
+.input:focus {
+  outline: none;
+  box-shadow: 0 2.4rem 2.4rem rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
