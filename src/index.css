@@ -95,22 +95,40 @@ button {
   display: flex;
   position: relative;
 }
+.navLinkGroup {
+  display: flex;
+  justify-content: space-between;
+}
+.navLinkGroup p {
+  font-size: 1.1rem;
+  color: pink;
+  padding: 5px;
+}
+.navLinkGroup p a{
+  text-decoration: none;
+  color:#272044;
+}
+header li {
+  display: inline-block;
+  font-size: 1.1rem;
+}
+.liContainer {
+  text-align: right;
+}
 .header ul {
   background-color: #EFCEE4;
-  display: flex;
 }
-.header ul li{
-  list-style: none;
-  padding: 1.5rem;
-  display: flex;
-  justify-content: flex-start;
-}
-.header ul li a {
+ul li a {
   text-decoration: none;
-  display: flex;
-  justify-content: flex-start;
+  padding: 10px;
+  display: inline-block;
   color:#272044;
   font-size: 18px;
+}
+a:hover  {
+  text-decoration: none;
+  font-weight: bold;
+  color:#272044;
 }
 .containerLink {
   height: 100vh;
