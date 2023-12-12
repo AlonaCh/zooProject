@@ -10,7 +10,8 @@ export default function CategoryPage(props) {
     return (
         <>
             <h1>{category}</h1>
-            <Search searchHandler={props.searchHandler} />
+            <Search {...props} />
+
             <div className='cards'>
                 {props[category]
                     .filter((element) =>
