@@ -15,7 +15,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   function searchHandler(event) {
-    setSearch(event.target.value);
+    setSearch(event.target.value.toLowerCase());
   }
 
   function closeHandler(name, category) {
@@ -61,7 +61,8 @@ function App() {
           searchHandler={searchHandler}
         />)
       },
-      { path: "/category/:name", element: <SinglePage {...zooList} /> },//:name=param
+      { path: ":category/:name", element: <SinglePage {...zooList} /> },//:name=param
+
       { path: "/about", element: <About /> },
     ],
   },

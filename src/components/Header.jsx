@@ -3,16 +3,16 @@ import { useLocation } from 'react-router-dom';
 
 export default function Header({ cleanSearch }) {
 
-    /*const { pathname } = useLocation();
+    const { pathname } = useLocation();  // takes away header on home
     if (pathname === "/")
-        return null;*/
+        return null;
 
     return (
         <header>
 
             <nav>
                 <div className='navLinkGroup'>
-                    <p><NavLink className="header" to="/">Zoo REACT App</NavLink></p>
+                    <p><NavLink className="header" to="/">Zoo React App</NavLink></p>
                     <ul className='liContainer'>
                         <li><NavLink to="/">Home</NavLink></li>
                         <li><NavLink to="/animals" onClick={cleanSearch}>Animals</NavLink></li>

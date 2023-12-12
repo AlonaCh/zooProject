@@ -4,12 +4,14 @@ import Search from '../components/Search.jsx';
 
 export default function CategoryPage(props) {
     const params = useParams();
+    console.log(params);
+    console.log(props);
     let category = params.category; // props[params.category];
     console.log(props[category]); // because key(params.category) is in a variable
 
     return (
         <>
-            <h1>{category}</h1>
+            <h1>{category.toUpperCase()}</h1>
             <Search {...props} />
 
             <div className='cards'>
@@ -30,5 +32,3 @@ export default function CategoryPage(props) {
         </>
     )
 };
-
-//{ Cities.map(city) => (<CityItem city={city} key={city.id} />) }

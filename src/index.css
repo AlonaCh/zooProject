@@ -2,9 +2,6 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: white;
 
   font-synthesis: none;
@@ -27,12 +24,6 @@ body {
   min-height: 100vh;
   text-align: center;
 }
-/*.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-} */
 .cards {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -42,16 +33,53 @@ body {
 .card {
   background-color: antiquewhite;
   position: relative;
+  border-radius: 5px;
 }
 .card img {
-  /*width: 100%;*/
   width: 100%;
   object-fit: cover;
   filter: grayscale(70%);
+  border-radius: 5px;
 }
 .card img:hover {
   filter: grayscale(0);
 }
+.singlePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 55vh;
+  background: lightgrey;
+  padding: 20px;
+  margin-bottom: 200px;
+}
+.singleImage {
+ /* max-width: 500px;*/
+  float: left;
+  border: 3px solid white;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+.singleImage:hover {
+  transform: scale(1.1);
+  transition: 0.6s ease-in all;
+}
+.singleText {
+  background: var(--header-color);
+}
+.singleText h2 {
+  font-size: 30px;
+}
+.singleText p {
+  display: inline;
+  font-size: 16px;
+  padding: 5px;
+}
+.cardText {
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
   border: 1px solid transparent;
   font-size: 1em;
@@ -98,15 +126,15 @@ button {
 .navLinkGroup {
   display: flex;
   justify-content: space-between;
-}
-.navLinkGroup p {
-  font-size: 1.1rem;
-  color: pink;
-  padding: 5px;
+  margin: 5px;
+  font-size: 18px;
+  background-color: pink;
 }
 .navLinkGroup p a{
   text-decoration: none;
   color:#272044;
+  font-size: 1.1rem;
+  padding: 5px;
 }
 header li {
   display: inline-block;
@@ -115,20 +143,15 @@ header li {
 .liContainer {
   text-align: right;
 }
-.header ul {
-  background-color: #EFCEE4;
-}
 ul li a {
   text-decoration: none;
-  padding: 10px;
+  padding: 8px;
   display: inline-block;
   color:#272044;
-  font-size: 18px;
 }
 a:hover  {
   text-decoration: none;
   font-weight: bold;
-  color:#272044;
 }
 .containerLink {
   height: 100vh;
@@ -141,16 +164,15 @@ a:hover  {
   justify-content: center;
   width: 50%;
 }
-
 .animalLink {
-  background-image: url('./animal.jpg');
+  background-image: url("https://source.unsplash.com/random/?alpaca");
   background-size: cover;
   height: 100%;
   background-position: center;
   display: flex;
 }
 .birdLink {
-  background-image: url('./bird.jpg');
+  background-image: url("https://source.unsplash.com/random/?duck");
   background-size: cover;
   height: 100%;
   background-position: center;
@@ -160,10 +182,22 @@ a:hover  {
   text-decoration: none;
   align-items: center;
   display: flex;
-  color: lightslategray;
+  color: white;
   font-size: 35px;
 }
 .footer {
   bottom: 0;
   text-align: center;
+}
+.more {
+  text-decoration: none;
+  color: #272044;
+}
+.return {
+  font-weight: 600;
+  font-size: 0.8rem;
+  background: pink;
+  color: #272044;
+  padding: 1rem;
+  margin: 2rem;
 }
