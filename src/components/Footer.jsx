@@ -7,7 +7,7 @@ export default function Footer() {
 
     return (
         <div className='footer'>
-            <p>Copyright Alona Chubenko</p>
+            <p>Copyright Alona Chubenko 2023</p>
         </div>
     );
 };
