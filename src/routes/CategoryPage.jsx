@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import Card from '../components/Card';
 import Search from '../components/Search.jsx';
+import BackToTop from "../components/BackToTop";
 
 export default function CategoryPage(props) {
     const params = useParams();
@@ -29,6 +30,7 @@ export default function CategoryPage(props) {
                             removeLikes={() => props.likesCounter(element.name, 'remove', category)}
                         />))}
             </div>
+            <BackToTop />
         </>
     )
 };
