@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
     --color-primary: #272044;
-    --color-back: #F4F1FE;
-    --color-back-card:antiquewhite;
-    --header-color: pink;
+    --color-back: #D5E5F0;
+    --color-back-card:#F2E7DF;
     --close-color: grey;
 
 }
@@ -91,7 +90,7 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 4px;
-  background-color: antiquewhite;
+  background-color: var(--color-back-card);
 }
 .close {
   top: 0;
@@ -110,15 +109,15 @@ button {
 .hearts {
   cursor: pointer;
   display: flex;
-  background-color: var(--header-color);
+  background-color: var(--color-back);
   border-radius: 20px;
   padding: 5px;
 }
 .red-like {
-  color: red;
+  color: #fab814;;
 }
 .black-like {
-  color: purple;
+  color: #483940;
 }
 .app{
   height: 100vh;
@@ -165,10 +164,12 @@ a:hover  {
 }
 .animalLink,
 .birdLink {
+  font-weight: bold;
   display: flex;
   justify-content: center;
   width: 50%;
 }
+
 .animalLink {
   background-image: url("https://source.unsplash.com/random/?alpaca");
   background-size: cover;
@@ -197,10 +198,14 @@ a:hover  {
 .return {
   font-weight: 600;
   font-size: 0.8rem;
-  background: var(--header-color);
+  background: var(--color-back-card);
   color: var(--color-primary);
   padding: 1rem;
   margin: 2rem;
+}
+.return:hover{
+  background-color: var(--color-primary);
+  color: var(--color-back-card);
 }
 .input {
   justify-self: center;
@@ -223,15 +228,16 @@ a:hover  {
 }
 .footer {
   padding: 1.5rem;
-  color: black;
-  margin: auto 0;
   width: 100%;
-  height: 45px;
-  position: absolute;
   bottom: 0;
-}
+   width: 100%;
+  text-align: center;
+ color: var(--color-primary);
+  font-size: 1rem;
+} 
 .about{
-  line-height: 40px;
+  line-height: 40px; 
+  margin-bottom: 250px;
 }
 .topBtn {
   position: fixed;
@@ -242,9 +248,13 @@ a:hover  {
   border-radius: 12px;
   cursor: pointer;
   right: 50px;
-  background-color: #fab814;
+  background-color: var(--color-back);
   box-shadow: 1px 1px 2px rgba(133, 112, 69, 0.807);
   font-family: inherit;
   font-size: inherit;
   color: #323367;
+}
+.topBtn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-back-card);
 }
