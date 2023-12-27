@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Changa&family=Dosis:wght@300&family=Frank+Ruhl+Libre:wght@300&family=Lato:ital,wght@0,300;1,400&family=PT+Mono&family=Playfair+Display&family=Poppins:wght@200&family=Roboto+Condensed:wght@300&family=Tourney:ital,wght@0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,200&display=swap');
+
 :root {
   line-height: 1.5;
   font-weight: 400;
@@ -57,7 +58,6 @@ body {
   margin-bottom: 200px;
 }
 .singleImage {
- /* max-width: 500px;*/
   float: left;
   border: 3px solid white;
   border-radius: 10px;
@@ -67,9 +67,6 @@ body {
   transform: scale(1.1);
   transition: 0.6s ease-in all;
 }
-/*.singleText {
-
-}*/
 .singleText h2 {
   font-size: 30px;
 }
@@ -131,27 +128,27 @@ button {
   display: flex;
   justify-content: space-between;
   margin: 5px;
-  font-size: 18px;
+  
   background-color: var(--color-back-card);
+  padding: 18px;
 }
 .navLinkGroup p a{
   text-decoration: none;
   color: var(--color-primary);
-  font-size: 1.1rem;
-  padding: 5px;
+  font-size: 1.5rem;
 }
 header li {
   display: inline-block;
-  font-size: 1.1rem;
 }
 .liContainer {
   text-align: right;
 }
 ul li a {
   text-decoration: none;
-  padding: 8px;
+  padding-left: 15px;
   display: inline-block;
   color: var(--color-primary);
+  font-size: 1.5rem;
 }
 a:hover  {
   text-decoration: none;
