@@ -1,8 +1,11 @@
-# React + Vite
+# This is a Zoo project is made in React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## This project was created in Business College of Helsinki
 
-Currently, two official plugins are available:
+### Such tools were used:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- useState, useParams, useNavigate, useLocation hooks
+- routes implementation
+- map and filter methods
+- conditional statements
+- useState hook
