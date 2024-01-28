@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
 
-/*function clickAddHeandler() {
-  const [likes, setLikes] = useState("");
-}*/
-
 export default function Card({
   name,
   likes,

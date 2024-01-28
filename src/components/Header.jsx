@@ -26,11 +26,5 @@ export default function Header({ cleanSearch }) {
     );
 };
 
-/*
-export default function Header({ cleanSearch }) {
-
-    /*const { pathname } = useLocation();
-    if (pathname === "/")
-        return null;*/
 
 

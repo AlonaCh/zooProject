@@ -19,9 +19,7 @@ function App() {
   }
 
   function closeHandler(name, category) {
-    // we need to know wich name we click
-    console.log(name);
-    const newArray = zooList[category].filter((element) => element.name !== name); // newArray is everything but not that name
+    const newArray = zooList[category].filter((element) => element.name !== name); 
     setZooList({ ...zooList, [category]: newArray });
 
   }
