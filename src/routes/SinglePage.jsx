@@ -12,7 +12,6 @@ export default function SinglePage(props) {
     console.log('data', data)
 
     return (
-        <>
             <div className="singlePage">
                 <img className="singleImage" src={`https://source.unsplash.com/400x400/?${data.name}`} alt={data.name} />
                 <div className="singleText">
@@ -24,7 +23,6 @@ export default function SinglePage(props) {
                     <button className="return" onClick={() => navigate(-1)}>Return</button>
                 </div>
             </div>
-        </>
     )
 }
 

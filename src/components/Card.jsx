@@ -11,10 +11,10 @@ export default function Card({
     <div className="card">
       <img src={`https://source.unsplash.com/400x400/?${name}`} alt={name} />
 
-      <h3>{name.toUpperCase()}</h3>
+      <h3>{name}</h3>
       <div className="cardText">
-        <button className="close" onClick={onclick}><span></span>
-          &times;
+        <button className="close" onClick={onclick}><span> &times;</span>
+         
         </button>
 
         <button onClick={removeLikes}>
@@ -27,7 +27,7 @@ export default function Card({
         </button>
 
       </div>
-      <Link className="more" to={`${name}`}>See more</Link>
+      <Link className="more" to={`${name}/`}>See more</Link>
     </div>
   );
 }

@@ -1,9 +1,8 @@
-import { NavLink } from 'react-router-dom';
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function Header({ cleanSearch }) {
 
-    const { pathname } = useLocation();  // takes away header on home
+    const { pathname } = useLocation();
     if (pathname === "/")
         return null;
 
