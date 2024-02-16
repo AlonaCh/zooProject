@@ -5,7 +5,7 @@ import BackToTop from "../components/BackToTop";
 
 export default function CategoryPage(props) {
     const params = useParams();
-    let category = params.category; // props[params.category];
+    let category = params.category;
   
 
     return (
@@ -21,10 +21,10 @@ export default function CategoryPage(props) {
                                 .includes(props.search.toLowerCase()))
                         .map((element) => (
                             <Card key={element.name}
-                                {...element} // pass all the object
+                                {...element} 
                                 onclick={() =>
                                     props.closeHandler(element.name, category)}
-                                addLikes={() => props.likesCounter(element.name, 'add', category)} //addLikes is a trigger
+                                addLikes={() => props.likesCounter(element.name, 'add', category)} 
                                 removeLikes={() => props.likesCounter(element.name, 'remove', category)}
                             />))}
                 </div>
